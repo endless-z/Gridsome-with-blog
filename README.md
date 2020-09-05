@@ -35,3 +35,25 @@ import './assets/index.css'
 ```
 
 ![image](https://img-blog.csdnimg.cn/20200905221932317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM1MzQ5NDkz,size_16,color_FFFFFF,t_70#pic_center)
+
+### 其他页面找到对应的页面即可
+
+### 使用本地md文件管理文章内容
+- https://www.gridsome.cn/docs/fetching-data/
+
+npm install @gridsome/source-filesystem
+
+```js
+// gridsome-config.js 配置
+plugins: [
+  {
+    use: '@gridsome/source-filesystem',
+    options: {
+      path: 'docs/**/*.md',
+      typeName: 'DocPage'
+    }
+  }   
+]
+```
+
+- yarn add @gridsome/transformer-remark
