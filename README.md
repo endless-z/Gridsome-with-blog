@@ -49,11 +49,24 @@ plugins: [
   {
     use: '@gridsome/source-filesystem',
     options: {
-      path: 'docs/**/*.md',
-      typeName: 'DocPage'
+      path: './content/blog/**/*.md',
+      typeName: 'BlogPost'
     }
   }   
 ]
 ```
 
 - yarn add @gridsome/transformer-remark
+
+
+### Strapi
+
+- https://strapi.io/
+
+- yarn create strapi-app my-project --quickstart
+- npx create-strapi-app my-project --quickstart
+
+- 注册
+
+### 使用Strapi接口
+https://strapi.io/documentation/v3.x/content-api/api-endpoints.html#endpoints
