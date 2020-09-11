@@ -31,6 +31,7 @@
                   type="text"
                   class="form-control"
                   placeholder="Name"
+                  v-model="from.name"
                   id="name"
                   required
                   data-validation-required-message="Please enter your name."
@@ -45,6 +46,7 @@
                   type="email"
                   class="form-control"
                   placeholder="Email Address"
+                  v-model="from.email"
                   id="email"
                   required
                   data-validation-required-message="Please enter your email address."
@@ -59,6 +61,7 @@
                   type="tel"
                   class="form-control"
                   placeholder="Phone Number"
+                  v-model="from.phone"
                   id="phone"
                   required
                   data-validation-required-message="Please enter your phone number."
@@ -74,6 +77,7 @@
                   class="form-control"
                   placeholder="Message"
                   id="message"
+                  v-model="from.message"
                   required
                   data-validation-required-message="Please enter a message."
                 ></textarea>
@@ -82,7 +86,7 @@
             </div>
             <br />
             <div id="success"></div>
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton" @click.prevent="onSubmit">Send</button>
           </form>
         </div>
       </div>
@@ -91,8 +95,33 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "ContactPage",
+  data () {
+    return {
+      from: {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    async onSubmit () {
+      try {
+        await axios({
+          method: 'POST',
+          url: 'http://localhost:1337/contacts',
+          data: this.from
+        })
+        window.alert('提交成功')
+      } catch (err) {
+        window.alert('提交失败, 请稍后重试')
+      }
+    }
+  }
 };
 </script>
 
