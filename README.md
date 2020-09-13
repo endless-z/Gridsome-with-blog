@@ -162,6 +162,15 @@ https://vercel.com/
 ![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599992924517-42fe9001-716b-41b6-8d2c-20d2515044d5.png)
 
 如果你的打包命令不是npm run build 需要 重新设置
-我这里是yarn run build， 所以更改
+我这里是yarn build， 所以更改
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599993399210-bf373b27-0187-4210-bc8f-6d96a0cd541d.png) 
+
+
+### 部署成功
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599994189131-ac871947-78c9-44ee-be06-f6a55dee2ef1.png)
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599994117184-b8814768-a4ba-4a4a-81a0-856eb8b1f227.png)
+
+https://blog-frontend-woad.vercel.app/
