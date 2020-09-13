@@ -120,3 +120,17 @@ axios
     console.log('An error occurred:', error.response);
   });
 ```
+
+
+### 把本地服务连接远程strapi
+- 设置环境变量
+https://www.gridsome.cn/docs/environment-variables/
+
+在根目录下创建 `.env.development` 文件
+```js
+GRIDSOME_API_URL=http://139.224.75.201:1337
+```
+更改gridsome.config.js配置中的 apiURL
+```js
+apiURL: process.env.GRIDSOME_API_URL
+```
