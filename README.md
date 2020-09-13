@@ -162,6 +162,6 @@ https://vercel.com/
 ![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599992924517-42fe9001-716b-41b6-8d2c-20d2515044d5.png)
 
 如果你的打包命令不是npm run build 需要 重新设置
-我这里默认是npm run build， 所以不更改
+我这里是yarn run build， 所以更改
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599993399210-bf373b27-0187-4210-bc8f-6d96a0cd541d.png) 
