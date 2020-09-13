@@ -164,7 +164,7 @@ https://vercel.com/
 如果你的打包命令不是npm run build 需要 重新设置
 我这里是yarn build， 所以更改
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599993399210-bf373b27-0187-4210-bc8f-6d96a0cd541d.png) 
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599994525291-2e2905b0-7935-452a-a238-3b21a31bdb01.png) 
 
 
 ### 部署成功
@@ -174,3 +174,45 @@ https://vercel.com/
 ![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1599994117184-b8814768-a4ba-4a4a-81a0-856eb8b1f227.png)
 
 https://blog-frontend-woad.vercel.app/
+
+
+### 数据自动更新
+
+我们可以找到部署日志，去重新部署，不过每次都要这样未免也太麻烦了，这里推荐一个懒人技巧
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600004606968-0228bbf5-e9fd-4780-92fa-0a20ab3defa7.png)
+
+- 当Strapi 数据更新了的时候，让Strapi 去告诉 vercel 去重新部署，我数据更新了，你要给我重新部署！
+
+那么如何做呢
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600004986637-c561a719-b89d-4bb3-831f-16caab95f4bc.png)
+
+首先找到项目 blog-backend / Settings / Git Integration / Deploy Hooks
+
+创建一个钩子
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600005145303-dadd9780-e718-4bef-a49e-6b7aee78bd42.png)
+
+创建完成之后我们会得到一个连接 直接复制
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600005188749-e16c9624-d4d1-490d-8146-1d0630e5fc84.png)
+
+接下来我们去strapi 后台 找到设置选项
+
+当你进行数据操作的时候，然后去请求这个webhooks，那么 vercel 就会触发重新构建
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600005514790-b3ba7233-a7f2-462c-a621-9f437f283337.png)
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600005659998-122693cf-21c5-4115-a52c-57831c2c8109.png)
+
+触发更新了
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600007964049-680caa56-714c-4c3a-b011-d577985e31d0.png)
+
+这里error 是因为我url 没上传 ，导致出错
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600008331683-f1340302-38c2-4616-a785-01594c845116.png)
+
+重新上传，部署成功！
+
+![image](https://cdn.nlark.com/yuque/0/2020/png/382369/1600008227634-6d2ba11d-2ad0-42c6-8809-edd3b5c8fee1.png)

@@ -82,7 +82,7 @@
               on July 8, 2019
             </p>
           </div>-->
-          <hr />
+          <!-- <hr /> -->
           <!-- Pager -->
           <!-- <div class="clearfix">
             <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
@@ -96,7 +96,7 @@
 
 <page-query>
 query ($page: Int) {
-  posts: allStrapiPost (perPage: 1, page: $page) @paginate {
+  posts: allStrapiPost (perPage: 2, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage
